@@ -12,7 +12,11 @@ export class AppComponent implements OnInit{
   private title: string;
   private current_time : Date;
   private subscription: Subscription;
-  
+  private text: string;
+  private select_color: string;
+  private select_size: number;
+  private select_font: string;
+   
   ngOnInit(){
     let timer = TimerObservable.create(0, 1000);
     this.subscription = timer.subscribe(t => {
@@ -28,7 +32,10 @@ export class AppComponent implements OnInit{
   }
   
   constructor(){
-    this.title = 'Angular2勉強会　4/24宿題 STEP2';
+    this.title = 'Angular2勉強会　4/24宿題 STEP5';
+    this.select_color="black";
+    this.select_size =10;
+    this.select_font ="sans-serif"; 
     
   }
   

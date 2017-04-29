@@ -2,4 +2,22 @@
 <div class="time">{{current_time | date: 'yyyy年M月d日(EEE) H時mm分ss秒'}}</div>
 <br>
 ここに文字を入力：<input type="text" [(ngModel)]="text"><br>
-ここに出力される：{{text}}
+ここに出力される：<span [ngStyle]="{'color': select_color, 'font-size': select_size + 'px', 'font-family': select_font}">{{text}}</span>
+<br>
+<select class="form-control" required [(ngModel)]="select_color" (change)="select_color=$event.target.value">
+    <option value="black">black</option>
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+</select>
+
+<select class="form-control" required [(ngModel)]="select_size" (change)="select_size=$event.target.value">
+    <option value="10">10pt</option>
+    <option value="20">20pt</option>
+    <option value="30">30pt</option>
+</select>
+
+<select class="form-control" required [(ngModel)]="select_font" (change)="select_font=$event.target.value">
+    <option value="sans-serif">ゴシック</option>
+    <option value="cursive">筆記体</option>
+    <option value="fantasy">装飾</option>
+</select>
