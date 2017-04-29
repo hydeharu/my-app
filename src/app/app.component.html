@@ -1,2 +1,5 @@
 <div class="title">{{title}}</div>
 <div class="time">{{current_time | date: 'yyyy年M月d日(EEE) H時mm分ss秒'}}</div>
+<br>
+ここに文字を入力：<input type="text" [(ngModel)]="text"><br>
+ここに出力される：{{text}}
